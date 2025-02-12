@@ -110,6 +110,8 @@ class FunctionFormatter(Formatter):
                 tool_calls = [tool_calls]
 
             for tool_call in tool_calls:
+                if "parameters" not in tool_call:
+                    tool_call["parameters"] = {}
                 functions.append((tool_call["name"], json.dumps(tool_call["arguments"], ensure_ascii=False)))
 
         except json.JSONDecodeError:
@@ -125,7 +127,9 @@ class FunctionFormatter(Formatter):
                     elements.append(slot)
                 else:
                     raise RuntimeError(f"Input must be string, set[str] or dict[str, str], got {type(slot)}")
-
+        elements = [item for item in elements if item != {'eos_token'}]
+        elements.append({'eos_token'})
+        # print(elements)
         return elements
 
 
