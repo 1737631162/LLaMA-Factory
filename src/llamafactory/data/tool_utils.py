@@ -28,7 +28,7 @@ DEFAULT_TOOL_PROMPT = (
     "You have access to the following tools:\n{tool_text}"
     "Use the following format if using a tool:\n"
     "```\n"
-    "Action: tool name (one of [{tool_names}])\n"
+    "Action: tool name (one or more of [{tool_names}])\n"
     "Action Input: the input to the tool, in a JSON format representing the kwargs "
     """(e.g. ```{{"input": "hello world", "num_beams": 5}}```)\n"""
     "```\n"
@@ -94,7 +94,7 @@ class DefaultToolUtils(ToolUtils):
                     required = ", required"
 
                 if param.get("enum", None):
-                    enum = ", should be one of [{}]".format(", ".join(param["enum"]))
+                    enum = ", should be one of [{}]".format(", ".join(str(param["enum"])))
 
                 if param.get("items", None):
                     items = ", where each item should be {}".format(param["items"].get("type", ""))
