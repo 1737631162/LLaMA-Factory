@@ -1,6 +1,6 @@
 {
-  "remote_controll_toolcall_v10": {
-    "file_name": "remote_controll_toolcall_v10.json",
+  "remote_controll_toolcall": {
+    "file_name": "remote_controll_toolcall.json",
     "formatting": "sharegpt",
     "columns": {
       "messages": "conversations",
