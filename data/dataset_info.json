@@ -1,4 +1,20 @@
 {
+  "remote_controll_toolcall_v10": {
+    "file_name": "remote_controll_toolcall_v10.json",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "tools": "tools"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "observation_tag": "observation",
+      "function_tag": "function_call"
+    }
+  },
   "identity": {
     "file_name": "identity.json"
   },
