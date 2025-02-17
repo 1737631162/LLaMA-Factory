@@ -1,0 +1,405 @@
+[
+    {
+        "name": "OpenAir",
+        "description": "打开空调",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "airModel": {
+                    "type": "integer",
+                    "description": "空调制冷模式;0：制冷，1制热",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "acOptions": {
+                    "type": "integer",
+                    "description": "空调控制选项 0：内循环，1：外循环",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1
+                    ]
+                },
+                "temperature": {
+                    "type": "integer",
+                    "description": "空调温度，默认为26度，范围为18度到32度",
+                    "maximum": 32,
+                    "minimum": 18,
+                    "default": 26
+                },
+                "windPower": {
+                    "type": "integer",
+                    "description": "空调风力档位，范围为1-10档",
+                    "maximum": 10,
+                    "minimum": 1,
+                    "default": 3
+                },
+                "runTime": {
+                    "type": "integer",
+                    "description": "空调运行时间，默认为15分钟",
+                    "minimum": 0,
+                    "default": 15
+                }
+            },
+            "required": [
+                "airModel"
+            ]
+        }
+    },
+    {
+        "name": "CloseAir",
+        "description": "关闭空调",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "UnLockDoor",
+        "description": "解锁车门",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "LockDoor",
+        "description": "锁定车门",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "OpenWindow",
+        "description": "打开车窗或具体关闭某些车窗",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "leftAnteriorWindowDegree": {
+                    "type": "integer",
+                    "description": "左前车窗开启幅度 0-10",
+                    "maximum": 10,
+                    "minimum": 0,
+                    "default": 1
+                },
+                "leftRearWindowDegree": {
+                    "type": "integer",
+                    "description": "左后车窗开启幅度 0-10",
+                    "maximum": 10,
+                    "minimum": 0,
+                    "default": 0
+                },
+                "rightAnteriorWindowDegree": {
+                    "type": "integer",
+                    "description": "右前车窗开启幅度 0-10",
+                    "maximum": 10,
+                    "minimum": 0,
+                    "default": 0
+                },
+                "rightRearWindowDegree": {
+                    "type": "integer",
+                    "description": "右后车窗开启幅度 0-10",
+                    "maximum": 10,
+                    "minimum": 0,
+                    "default": 0
+                }
+            }
+        }
+    },
+    {
+        "name": "CloseWindow",
+        "description": "关闭所有车窗",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "WindowSlit",
+        "description": "车窗开缝",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "OpenDormer",
+        "description": "打开天窗",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "skyWindowDegree": {
+                    "type": "integer",
+                    "description": "天窗开启程度",
+                    "maximum": 10,
+                    "minimum": 0,
+                    "default": 1
+                },
+                "dormerPosition": {
+                    "type": "integer",
+                    "description": "天窗状态,0：起翘状态 1：水平状态",
+                    "default": 1,
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "name": "CloseDormer",
+        "description": "关闭天窗",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "SteeringWheelHeating",
+        "description": "方向盘加热控制",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "steeringWheelHeating": {
+                    "type": "integer",
+                    "description": "参数值说明：0-打开，1-关闭",
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            },
+            "required": [
+                "steeringWheelHeating"
+            ]
+        }
+    },
+    {
+        "name": "OpenTrunk",
+        "description": "打开后备箱",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "CloseTrunk",
+        "description": "关闭后备箱",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    },
+    {
+        "name": "RemoteSearchCar",
+        "description": "闪灯鸣笛或寻车",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "FlashLightNum": {
+                    "type": "integer",
+                    "description": "双闪次数，默认为3",
+                    "default": 3
+                },
+                "WhistleNum": {
+                    "type": "integer",
+                    "description": "鸣笛次数，默认为3",
+                    "default": 3
+                }
+            }
+        }
+    },
+    {
+        "name": "SeatHeating",
+        "description": "座椅加热设置指令",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "lfSeatStatus": {
+                    "type": "integer",
+                    "description": "左前座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "lrSeatStatus": {
+                    "type": "integer",
+                    "description": "左后座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "rfSeatStatus": {
+                    "type": "integer",
+                    "description": "右前座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "rrSeatStatus": {
+                    "type": "integer",
+                    "description": "右后座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            },
+            "multipleChoice": [
+                "lfSeatStatus",
+                "lrSeatStatus",
+                "rfSeatStatus",
+                "rrSeatStatus"
+            ]
+        }
+    },
+    {
+        "name": "SeatVentilation",
+        "description": "座椅通风设置",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "lfSeatStatus": {
+                    "type": "integer",
+                    "description": "左前座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "default": 0,
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "lrSeatStatus": {
+                    "type": "integer",
+                    "description": "左后座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "rfSeatStatus": {
+                    "type": "integer",
+                    "description": "右前座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "rrSeatStatus": {
+                    "type": "integer",
+                    "description": "右后座椅档位状态：0关闭  1一档  2二档  3三档",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            },
+            "multipleChoice": [
+                "lfSeatStatus",
+                "lrSeatStatus",
+                "rfSeatStatus",
+                "rrSeatStatus"
+            ]
+        }
+    },
+    {
+        "name": "sentryMode",
+        "description": "哨兵模式开关",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "openOrClose": {
+                    "type": "string",
+                    "description": "参数说明：1表示打开，2表示关闭",
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            },
+            "required": [
+                "openOrClose"
+            ]
+        }
+    },
+    {
+        "name": "OpenFragrance",
+        "description": "香氛功能设置",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "fragranceRunTime": {
+                    "type": "integer",
+                    "description": "香氛运行时间设置：默认5分钟 <br/>取值范围：0~255。",
+                    "default": 5,
+                    "minimum": 0,
+                    "maximum": 255
+                },
+                "fragranceAway": {
+                    "type": "integer",
+                    "description": "香氛通道设置：1：通道1；2：通道2；3：通道3；",
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                "fragranceConcent": {
+                    "type": "integer",
+                    "description": "香氛浓度设置：1：1档；2：2档；3：3档；",
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            },
+            "multipleChoice": [
+                "fragranceRunTime",
+                "fragranceAway",
+                "fragranceConcent"
+            ]
+        }
+    },
+    {
+        "name": "CloseFragrance",
+        "description": "关闭香氛功能",
+        "parameters": {
+            "type": "object",
+            "properties": {
+            }
+        }
+    }
+]
